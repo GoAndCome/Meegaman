@@ -112,6 +112,13 @@ public class StageMove : MonoBehaviour
     {
         for (int i = 0; i < MonsterFalse_list.Count; i++)
         {
+            GameObject[] monobj_ = GameObject.FindGameObjectsWithTag("Monster");
+            for(int j = 0; j < monobj_.Length; j++)
+            {
+                if(monobj_[j].name == "JUDOTAN(Clone)")
+                    Destroy(monobj_[j]);
+            }
+            
             if (MonsterFalse_list[i] != null)
                 MonsterFalse_list[i].SetActive(false);
         }
